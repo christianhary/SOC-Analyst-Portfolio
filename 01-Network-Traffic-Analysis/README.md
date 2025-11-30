@@ -6,7 +6,7 @@
 * **Attacker:** Nmap (Kali Linux)
 * **Victim:** Windows 10 Enterprise
 * **Analysis:** Wireshark
-* ![IP](IP set up.png)
+* ![IP](IP-set-up.png)
 
 ## 2. Attack Simulation
 I simulated an external threat actor performing a "Stealth" SYN Scan to identify open ports on the target workstation.
