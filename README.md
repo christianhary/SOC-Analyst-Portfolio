@@ -1,28 +1,26 @@
-# SOC-Analyst-Portfolio
+# 🛡️ SOC Analyst Portfolio
+**Name:** Christian Hary
+**Role:** Aspiring SOC Analyst | Blue Team Specialist
 
-🛡️ Cybersecurity & SOC Portfolio
-Master's Student | Aspiring SOC Analyst | Threat Hunter
+## 🚀 Professional Summary
+Masters student in Cybersecurity transitioning into SOC Operations. This repository documents my hands-on experience with SIEM configuration (Splunk), Endpoint Detection (Sysmon), and Packet Analysis (Wireshark).
 
-Welcome to my technical portfolio. Here, I document my journey into the Blue Team, focusing on traffic analysis, SIEM configuration, and endpoint detection.
+## 📂 Project Modules
 
-📂 Technical Projects
-1. SIEM Implementation & Brute Force Detection
-Tools: Splunk Enterprise, Windows Event Logs
+### 🔹 [1. Network Traffic Analysis](./01-Network-Traffic-Analysis)
+**Scenario:** Investigating a malware beaconing event.
+* **Tools:** Wireshark, TCPdump.
+* **Skills:** PCAP analysis, TCP stream reconstruction, identifying malicious C2 traffic.
 
-Summary: Configured a local SIEM to ingest authentication logs. Developed SPL queries to detect and visualize Brute Force attacks (Event ID 4625).
+### 🔹 [2. SIEM & Log Analysis](./02-SIEM-Log-Analysis)
+**Scenario:** Detecting Brute Force attacks against a corporate endpoint.
+* **Tools:** Splunk Enterprise, Windows Event Logs.
+* **Skills:** Log ingestion, SPL (Search Processing Language), Dashboard creation.
 
-Skills: Log Ingestion, SPL, Dashboarding.
+### 🔹 [3. Endpoint Security (EDR)](./03-Endpoint-Security)
+**Scenario:** Analyzing Process Creation logs to identify Ransomware behavior.
+* **Tools:** Sysmon (System Monitor), PowerShell.
+* **Skills:** XML Configuration, Event ID 1 (Process Create) analysis.
 
-2. Network Traffic & PCAP Analysis
-Tools: Wireshark, TCPdump
-
-Summary: Analyzed a malware infection PCAP. Identified the Command & Control (C2) beaconing IP and extracted the malicious payload.
-
-Skills: Packet Analysis, Protocol Decoding (HTTP/DNS).
-
-🛠️ Lab Environment
-Hypervisor: VirtualBox
-
-Attacker: Kali Linux
-
-Victim: Windows 10 Enterprise (Sysmon Configured)
+---
+*This lab environment was built using VirtualBox, Kali Linux (Attacker), and Windows 10 Enterprise (Victim).*
