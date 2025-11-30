@@ -10,7 +10,7 @@
 
 ## 2. Attack Simulation
 I simulated an external threat actor performing a "Stealth" SYN Scan to identify open ports on the target workstation.
-![Attack](attack sim.png)
+![Attack](attack-sim.png)
 * **Command:** `nmap -sS -p 1-1000 10.0.1.6`
 * **Intent:** The attacker attempts to map the attack surface without completing the TCP handshake, hoping to bypass basic logging.
 
@@ -24,7 +24,7 @@ The traffic log shows a massive spike in TCP packets originating from the Attack
 * **Missing Handshake:** There are no final `ACK` packets from the attacker to complete the connection on closed ports. This confirms it is a scan, not legitimate traffic.
 
 ## 4. Evidence
-Below is the Wireshark capture showing the high volume of SYN packets (Gray) targeting the victim (10.0.2.15).
+Below is the Wireshark capture showing the high volume of SYN packets (Gray) targeting the victim (10.0.1.15).
 
 ![Nmap Scan Evidence](nmap-scan-evidence.png)
 
