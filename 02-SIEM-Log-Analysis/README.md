@@ -30,7 +30,7 @@ index=* EventCode=4625 | stats count by Account_Name
 * **EventCode=4625:** Filters for "An account failed to log on."
 * **stats count by Account_Name:** Aggregates the data to show exactly who is being attacked.
 
-## Visual Evidence & Analysis
+## 4. Visual Evidence & Analysis
 The dashboard below highlights the targeted user account and the volume of failed attempts.
 ![splunk Chart](splunk-cha.png)
 ### 🚩 Analyst Observations (Describing the Attack)
@@ -39,7 +39,7 @@ The telemetry reveals a clear Brute Force pattern characterized by:
 * **Target Fixation:** All attempts targeted a specific user account, indicating a focused dictionary attack rather than a broad "Password Spray."
 * **Source Consistency:** The attacks originated from a single local workstation, suggesting either an insider threat or a compromised host attempting lateral movement.
 
-## Incident Response Guide
+## 5. Incident Response Guide
 If this alert triggered in a production SOC, I would follow this playbook:
 * **Context Check:** Did the user recently expire their password?
 * **Source Analysis:** Is the request coming from an internal IP (potential lateral movement) or external (Internet)?
