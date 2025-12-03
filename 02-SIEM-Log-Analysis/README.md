@@ -4,6 +4,7 @@
 **Objective:** To detect identity-based attacks using Splunk Enterprise and Windows Event Logs.
 **Scenario:** A threat actor attempts to guess user credentials (Brute Force/Dictionary Attack).
 **Data Source:** Windows Security Event Log (Event ID 4625).
+**Tools Used:** Splunk
 
 ## 2. Technical Configuration
 * **Ingestion:** Configured Splunk to monitor the local `Security` log channel.
