@@ -40,7 +40,17 @@ The telemetry reveals a clear Brute Force pattern characterized by:
 * **Source Consistency:** The attacks originated from a single local workstation, suggesting either an insider threat or a compromised host attempting lateral movement.
 
 ## 5. Incident Response Guide
-If this alert triggered in a production SOC, I would follow this playbook:
-* **Context Check:** Did the user recently expire their password?
-* **Source Analysis:** Is the request coming from an internal IP (potential lateral movement) or external (Internet)?
-* **Containment:** If malicious, lock the Active Directory account and block the Source IP at the perimeter firewall.
+
+If this alert triggered in a production SOC, the response depends on the source of the attack:
+
+### Scenario A: Source is External (Internet)
+* **Action:** Immediate Block.
+* **Procedure:** Add the Source IP to the Perimeter Firewall "Deny List" to stop the attack at the edge.
+
+### Scenario B: Source is Internal (Workstation/Localhost)
+* **Context:** Since this lab simulated a local attack (Localhost), blocking the IP is **not** an option as it would disrupt system services.
+* **Action:** Quarantine & Isolate.
+* **Procedure:**
+    1.  **Disconnect:** Immediately remove the infected host from the network (Unplug Ethernet/Disable Wi-Fi) to prevent lateral movement.
+    2.  **Scan:** Run a full EDR/Antivirus scan to identify the process or script generating the login attempts.
+    3.  **Disable:** Temporarily disable the compromised user account in Active Directory until the machine is cleaned.
