@@ -35,7 +35,7 @@ The dashboard below highlights the targeted user account and the volume of faile
 ![splunk Chart](splunk-cha.png)
 ### 🚩 Analyst Observations (Describing the Attack)
 The telemetry reveals a clear Brute Force pattern characterized by:
-* **High Velocity:** A spike of 8 failure events occurring within a 60-second window.
+* **High Velocity:** A spike of 8 failure events.
 * **Target Fixation:** All attempts targeted a specific user account, indicating a focused dictionary attack rather than a broad "Password Spray."
 * **Source Consistency:** The attacks originated from a single local workstation, suggesting either an insider threat or a compromised host attempting lateral movement.
 
