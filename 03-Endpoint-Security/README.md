@@ -40,7 +40,7 @@ renderXml = 1
 ```
 Result: This bypassed the UI bug and successfully piped Sysmon telemetry into the main index.
 
-4. ⚔️ Attack Simulation (Red Team Logic)
+## 4. ⚔️ Attack Simulation (Red Team Logic)
 To validate the detection rules, I simulated the adversary's behavior using standard Windows utilities to mimic a "Masquerading" attack (MITRE T1036).
 
 **The Execution Flow:**
