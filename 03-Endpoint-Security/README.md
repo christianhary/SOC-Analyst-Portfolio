@@ -72,7 +72,7 @@ The log entry below captures the exact moment of execution, showing the full fil
 ![Splunk Log](splunk-log.png)
 
 ## 7. Incident Response Guide
-If this specific alert (Mimikatz) triggers in a production environment:
+If this specific alert (`Mimikatz`) triggers in a production environment:
 * **Isolate:** Immediately cut network access to the host. Mimikatz is primarily used to steal Admin credentials, which can lead to total domain compromise within minutes.
 * **Triage:** Dump the RAM (Memory) for forensics to check if passwords were successfully extracted before the isolation.
 * **Reset:** Force a password reset for every user who logged into that machine recently (especially Domain Admins).
