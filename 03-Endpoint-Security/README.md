@@ -2,7 +2,7 @@
 
 <br>
 
-## 1. Project Overview
+## 1. 🎯 Project Overview
 
 **Objective:** To detect the execution of known malicious tools using advanced endpoint telemetry (Sysmon).
 
@@ -58,7 +58,7 @@ copy C:\Windows\System32\calc.exe C:\Users\Public\mimikatz.exe
 C:\Users\Public\mimikatz.exe
 ```
 
-## 5. Threat Hunting Logic
+## 5. 🔎 Threat Hunting Logic
 The Hypothesis
 Standard Windows logs (Event 4688) often lack the granularity needed to trace parent-child process relationships. I utilized Sysmon Event ID 1 to identify processes running from suspicious locations with known bad filenames.
 ![Splunk Sysmon](splunk-mim.png)
@@ -67,11 +67,11 @@ index=* source="*Sysmon*" EventCode=1 Image="*mimikatz*"
 ```
 * **Image="mimikatz":** Filters for the specific malicious binary name.
 
-## 6. Visual Evidence
+## 6. 📸 Visual Evidence
 The log entry below captures the exact moment of execution, showing the full file path and the parent process.
 ![Splunk Log](splunk-log.png)
 
-## 7. Incident Response Guide
+## 7. 🚨 Incident Response Guide
 If this specific alert (`Mimikatz`) triggers in a production environment:
 * **Isolate:** Immediately cut network access to the host. Mimikatz is primarily used to steal Admin credentials, which can lead to total domain compromise within minutes.
 * **Triage:** Dump the RAM (Memory) for forensics to check if passwords were successfully extracted before the isolation.
